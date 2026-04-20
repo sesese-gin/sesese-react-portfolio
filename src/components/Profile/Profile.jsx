@@ -26,7 +26,7 @@ function Profile({ baseUrl }){
                     {/* 右：写真 */}
                     <div className="profile-image-area">
                         {/* 画像パスは適宜調整してください */}
-                        <img src={`${baseUrl}image-home/reco-do.png`} alt="Profile" className="big-profile-img" />
+                        <img src={`/image-home/reco-do.png`} alt="Profile" className="big-profile-img" />
                     </div>
                 </div>
 

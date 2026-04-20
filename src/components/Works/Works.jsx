@@ -49,7 +49,7 @@
                   style={{ backgroundColor: work.image ? '#e0e0e0' : '#333333' }} 
                   >             
                       {work.image ? (
-                        <img src={`${baseUrl}${work.image}`} alt={work.title} className="work-thumbnail" />
+                        <img src={`/image-home/${work.image}`} alt={work.title} className="work-thumbnail" />
                       ) : (
                         <span className="no-image-text">
                         Coming Soon...
