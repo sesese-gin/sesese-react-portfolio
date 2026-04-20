@@ -1,5 +1,5 @@
 import React from 'react';
-import './LeftVisual.css';
+import './leftVisual.css';
 
 function LeftVisual({ baseUrl }){
     return(
