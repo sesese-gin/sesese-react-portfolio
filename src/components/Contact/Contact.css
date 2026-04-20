@@ -1,0 +1,130 @@
+/* Contact */
+
+.rounded-box-contact {
+    background-color: #252525; /* 背景色を白に */
+    /* ★ ここが角を丸くする魔法！数字が大きいほど丸くなります */
+    border-radius: 10px;
+    /* 内側の余白（これが無いと文字が端にくっつきます） */
+    padding: 120px 40px;
+    width: 98%;             /* 横幅も限界まで */
+    max-width: 1800px;
+    margin-top: 1%;       /* お好みで 0 またはマイナス（-20pxなど）に */
+    /*------*/
+    display: flex;           /* Flexboxを有効化 */
+    flex-direction: column;  /* 中身を縦に並べる */
+    justify-content: center; /* 【縦方向】の真ん中 */
+    align-items: center;     /* 【横方向】の真ん中 */
+    /* 箱自体の高さをしっかり出すことで「真ん中感」を強調 */
+    min-height: 90vh;        /* 画面の高さの8割分を確保 */
+    /* paddingの「上だけ多い」設定をやめて、上下均等にする */
+    padding: 60px 40px;
+
+    /*-------*/
+    min-height: 700px;      /* ★ 箱自体の「最低限の高さ」を固定して巨大に見せる */
+    color: #eeeeee;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0);
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.contact-section {
+    min-height: 80vh;      /* 画面の8割を使う */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-content {
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* 1. 「GET IN TOUCH」ラベル */
+.contact-label {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #00c853;        /* 緑色 */
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* 2. 巨大なメールアドレス */
+.email-big {
+    display: block;        /* リンクをブロック要素に */
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;      /* 極太 */
+    
+    /* 画面幅に合わせて大きさが変わる魔法の単位 */
+    font-size: clamp(1.2rem, 3vw, 2.5rem);
+ 
+    
+    color: #333;           /* 黒（濃いグレー） */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-bottom: 0.2em;   /* SNSとの距離 */
+
+     line-height: 1.2;
+    padding: 10px 0;       /* 上下に余白を作って、表示エリアを確保 */
+    width: 100%;           /* 横幅いっぱいまで使う */
+    word-break: break-all; /* 長すぎる場合は強制的に改行して画面内に収める */
+
+}
+
+/* ホバー時のアクション */
+.email-big:hover {
+    color: #00c853;        /* 緑色に変化 */
+    transform: scale(1.02); /* 少しだけ拡大 */
+    cursor: pointer;
+}
+
+/* 3. SNSリンクエリア */
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;             /* リンク同士の間隔 */
+    
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #777;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #777;
+    position: relative;    /* 線の基準 */
+    transition: 0.3s;
+}
+
+/* SNSホバー時に緑色にする */
+.social-links a:hover {
+    color: #00c853;
+}
+
+/* 区切り線（ / ） */
+.separator {
+    color: #ccc;
+    font-weight: 300;
+}
+
+/* --- スマホ対応 --- */
+.sp-only { display: none; } /* PCでは改行しない */
+
+@media (max-width: 768px) {
+    .email-big {
+        font-size: 2.5rem; /* スマホではピクセル指定で読みやすく */
+        word-break: break-all; /* 長すぎてはみ出さないように */
+    }
+    
+    .sp-only { display: block; } /* スマホでは@の前で改行させる */
+    
+    .social-links {
+        font-size: 1rem;
+        gap: 15px;
+    }
+}

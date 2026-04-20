@@ -1,0 +1,212 @@
+/* Profile */
+
+.profile-box {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* 間隔広げた */
+    background: #252525;
+    padding: 40px; /* 内側の余白広げた */
+    border-radius: 20px;
+    border: 4px solid #00c853;
+    box-shadow: 0 0 20px rgba(0, 200, 83, 0.4);
+}
+
+
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #00c853;
+    box-shadow: 0 0 20px rgba(0, 200, 83, 0.2); /* 緑色の光彩 */
+    filter: brightness(0.7);
+}
+
+
+
+.profile-info h4 { font-size: 1.8rem; margin-bottom: 15px; }
+
+.profile-info p { line-height: 1.8; color: #ccc; }
+
+
+
+.rounded-box-profile {
+    background-color: #252525; /* 背景色を白に */
+    /* ★ ここが角を丸くする魔法！数字が大きいほど丸くなります */
+    border-radius: 10px;
+    /* 内側の余白（これが無いと文字が端にくっつきます） */
+    padding: 120px 40px;
+    width: 98%;             /* 横幅も限界まで */
+    max-width: 1800px;
+    margin-top: 1%;       /* お好みで 0 またはマイナス（-20pxなど）に */
+    /*------*/
+    display: flex;           /* Flexboxを有効化 */
+    flex-direction: column;  /* 中身を縦に並べる */
+    justify-content: center; /* 【縦方向】の真ん中 */
+    align-items: center;     /* 【横方向】の真ん中 */
+    /* 箱自体の高さをしっかり出すことで「真ん中感」を強調 */
+    min-height: 90vh;        /* 画面の高さの8割分を確保 */
+    /* paddingの「上だけ多い」設定をやめて、上下均等にする */
+
+    padding: 60px 40px;
+
+   
+    min-height: 700px;      /* ★ 箱自体の「最低限の高さ」を固定して巨大に見せる */
+    color: #eeeeee;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0);
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- 新しいPROFILEセクション --- */
+
+/* 1. 画面の8割を使って中央寄せ */
+.profile-section {
+    min-height: 80vh; /* 画面の高さの80% */
+    display: flex;
+    align-items: center; /* 上下中央 */
+    justify-content: center;
+}
+
+/* 2. プロフィール全体を囲む箱 */
+.profile-container {
+    width: 100%;
+    max-width: 1000px; /* 横幅が広がりすぎないように */
+    padding: 0 20px;
+}
+
+/* --- 上段：左右分割レイアウト --- */
+.profile-top {
+    display: flex;
+    justify-content: space-between; /* 左右に離す */
+    align-items: center; /* 上下の高さを合わせる */
+    margin-bottom: 80px; /* 下のスキル欄との隙間 */
+    gap: 50px; /* 文字と写真の間の隙間 */
+}
+
+/* 左側：テキストエリア */
+.profile-text {
+    flex: 1; /* 余ったスペースを使う */
+}
+
+.profile-title {
+    /* h3の共通設定（緑の棒）はそのまま効きます */
+    margin-bottom: 20px;
+}
+
+.my-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 3.5rem; /* 名前をドデカく！ */
+    color: #333;
+    line-height: 1;
+    margin-bottom: 30px;
+    letter-spacing: -2px; /* ギュッと詰める */
+}
+
+.my-desc {
+    font-family: 'Shippori Mincho', sans-serif; /* 日本語フォント */
+    font-size: 1rem;
+    line-height: 2; /* 読みやすく広げる */
+    color: #555;
+}
+
+/* 右側：写真エリア */
+.profile-image-area {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* 写真を真ん中に */
+}
+
+.big-profile-img {
+    width: 300px;  /* 写真のサイズ */
+    height: 400px; /* 縦長にして雑誌っぽく */
+    object-fit: cover;
+    border-radius: 4px; /* 角を少しだけ丸く */
+    
+    /* ★緑色の影をズラして配置（デザインのポイント） */
+    box-shadow: 20px 20px 0px #00c853; 
+    transition: transform 0.4s ease;
+}
+
+.big-profile-img:hover {
+    /* ホバーすると少し動く */
+    transform: translate(-5px, -5px);
+    box-shadow: 25px 25px 0px #00c853;
+}
+
+
+/* --- 下段：スキル欄 --- */
+.profile-bottom {
+    border-top: 1px solid #ccc; /* 上に区切り線 */
+    padding-top: 30px;
+}
+
+.skills-label {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #00c853; /* ラベルは緑色 */
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap; /* 端まで行ったら折り返す */
+    gap: 15px; /* タグ同士の隙間 */
+}
+
+/* スキルタグのデザイン */
+.skill-tag {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+    
+    /* 枠線のみのシンプルなデザイン */
+    border: 2px solid #333;
+    padding: 10px 25px; /* カプセル型 */
+    border-radius: 50px;
+    
+    background: transparent;
+    transition: 0.3s;
+}
+
+/* ホバーで色が反転 */
+.skill-tag:hover {
+    background-color: #00c853; /* 緑背景 */
+    border-color: #00c853;     /* 緑枠 */
+    color: #fff;               /* 白文字 */
+    transform: translateY(-3px);
+}
+
+
+/* --- スマホ対応 --- */
+@media (max-width: 768px) {
+    .profile-top {
+        flex-direction: column-reverse; /* スマホなら写真を上に、文字を下に */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .big-profile-img {
+        width: 100%;
+        height: 300px;
+        box-shadow: 10px 10px 0px #00c853; /* 影を少し小さく */
+    }
+
+    .my-name {
+        font-size: 2.5rem;
+    }
+    
+    .profile-section {
+        min-height: auto; /* 高さはなりゆきで */
+        padding: 60px 0;
+    }
+}
+
+

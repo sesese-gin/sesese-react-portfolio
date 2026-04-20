@@ -1,0 +1,125 @@
+
+/* Works */
+
+.works-grid {
+
+    display: grid;
+    /* カードの最小幅を少し広げてゆったり配置 */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 60px; /* カード間の隙間も広げた */
+    padding-bottom: 50px;
+
+}
+
+
+
+.work-card {
+
+    background: #777777;
+    text-decoration: none;
+    /* 背景色や影を削除（ここがポイント！） */
+    background: transparent; 
+    box-shadow: none;
+    transition: transform 0.4s ease;
+}
+
+.work-card:hover {
+    transform: translateY(-10px);
+    background: transparent; /* 背景色はつけない */
+    box-shadow: none;
+}
+
+
+
+
+.card-img-wrapper {
+    width: 100%;
+    /* 正方形に近い比率や、好きな高さに設定 */
+    height: 300px; /* ← 画像を大きく見せるために高くしました */
+    
+    background-color: #e0e0e0; /* 画像がない時のグレー */
+    border-radius: 4px; /* 角を少しだけ丸く */
+    overflow: hidden;
+    
+    /* 画像自体に影をつけて「物体感」を出す */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transition: box-shadow 0.4s ease;
+    
+    /* Coming Soonなどの画像がない時用 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ホバー時に画像の影を濃くする */
+.work-card:hover .card-img-wrapper {
+    box-shadow: 0 20px 40px rgba(0, 200, 83, 0.2);
+}
+
+/* 画像本体 */
+.work-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 枠いっぱいに表示 */
+    transition: transform 0.6s ease;
+}
+
+/* ホバー時に画像をズーム */
+.work-card:hover .work-thumbnail {
+    transform: scale(1.05);
+}
+
+
+/* テキストエリア（黒い背景を消して、注釈風にする） */
+.card-text {
+    padding: 15px 5px 0 5px; /* 上に少し隙間を空ける */
+    background: transparent; /* 透明にする */
+    color: #333; /* 文字色を黒（濃いグレー）にする */
+}
+
+/* タイトル（作品名） */
+.card-text h4 {
+    font-family: 'Shippori Mincho', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+
+/* 説明文（HTML/CSS/JSなど） */
+.card-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;       /* 少し小さく */
+    color: #888;              /* 文字色 */
+    
+    /* ▼ タグっぽくする魔法 */
+    display: inline-block;    /* インラインブロックにする */
+    border: 1px solid #ccc;   /* 薄い枠線をつける */
+    padding: 2px 10px;        /* 内側の余白 */
+    border-radius: 20px;      /* 丸くする */
+    margin-top: 2px;          /* タイトルとの隙間 */
+    color: #777777;
+  
+}
+
+.no-image-text {
+    color: #00c853;          /* 緑色 */
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;       /* 程よい大きさ */
+    
+    /* ▼▼▼ これが見切れを防ぐ最強の設定 ▼▼▼ */
+    max-width: 90%;          /* 箱の幅いっぱいまで使わせない */
+    word-wrap: break-word;   /* 長い単語は途中で改行する */
+    overflow-wrap: break-word; /* 最近のブラウザ用 */
+    white-space: normal;     /* 普通に改行させる */
+    line-height: 1.4;        /* 上下の隙間を確保 */
+    /* ▲▲▲ ここまで ▲▲▲ */
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;           /* 文字の周りに余白を作る */
+    display: block;          /* ブロック要素にして幅制限を効かせる */
+}

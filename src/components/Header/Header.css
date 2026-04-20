@@ -1,0 +1,78 @@
+header {
+    position: fixed;       /* 画面右上に固定 */
+    top: 50px;
+    right: 50px;           /* 右端からの距離 */
+    z-index: 100;          /* 最前面に */
+    width: auto;           /* 幅は文字に合わせる */
+    /* 背景色との「差」を計算して色を反転させます */
+    mix-blend-mode: difference;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column; /* ★ここがポイント：縦並び */
+    gap: 15px;              /* 項目同士の間隔 */
+    list-style: none;
+    align-items: flex-end;  /* 右揃えにする */
+}
+
+/* 個別の「箱（リンク）」のデザイン */
+
+.nav-list a {
+    display: block;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;       /* 極太 */
+    font-size: 1.5rem;      /* 大きくして存在感を出す */
+
+    /* ▼▼▼ ここが重要！ ▼▼▼ */
+    /* 元の #333333 をやめて「真っ白」にします */
+    color: #ff37ac; /* 文字色を黒にする */
+ 
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: -1px;   /* ギュッと詰める */
+    line-height: 1;
+    
+    padding: 5px 10px;      /* 文字周りの余白 */
+    background: transparent;
+    
+    /* ★曲線を完全排除（カクカクにする） */
+    border-radius: 0px; 
+    
+    /* 右側に「透明な壁（緑の線）」を用意しておく */
+    border-right: 6px solid transparent;
+    
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    
+}
+
+/* マウスを乗せた時の動き */
+
+.nav-list a:hover {
+    color: #ffffff;         /* 白色に変化 */
+    
+    /* 右側に白の太い線が出現 */
+    border-right: 6px solid #ffffff;
+    border-bottom: 3px solid #ffffff;
+   
+    
+    /* 左に少しズレる（壁に押し出される感じ） */
+    padding-right: 20px;
+    /* 背景色は「白」を薄く入れると、反転して「黒」っぽく透けます */
+    background-color: rgba(255, 255, 255, 0.1);
+
+    
+    
+
+}
+
+/* ヘッダー全体のコンテナ */
+
+.nav-container {
+    padding: 0;
+    margin: 0;
+}
+
+
+nav a:hover::after { width: 100%;
+color: #00c853; }

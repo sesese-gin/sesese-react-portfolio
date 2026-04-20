@@ -1,0 +1,125 @@
+
+/* ----------------------------------
+
+   左側：固定ビジュアルエリア
+
+---------------------------------- */
+
+.left-side {
+    width: 30%;
+    height: 100%;
+    /* 画像パスを確認してください */
+    /*background-image: url('image-home/kame_picture.jpg');*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-color:  #eeeeee; /* 画像がないときの背景色 */
+    color: #eeeeee; /* 文字色も白にしておく */
+
+    /* パターンA：Syneに合う「黒くて太い実線」（モダンで引き締まる） */
+    border-right: 20px solid #333333;
+ 
+  /* もしクレヨン画像があるなら、filter: invert(1); で白く反転させて使う */
+
+    overflow: hidden;   /* はみ出した画像を隠す */
+
+    z-index: 100; 
+    box-sizing: border-box; /* 線の太さを幅に含める設定 */
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+
+
+.left-side::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0); /* フィルターを少し濃くしました */
+}
+
+.overlay-text {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+
+    /* ▼ タイトルのロード時アニメーション */
+
+    animation: fadeInDown 1.5s ease forwards;
+    opacity: 0;
+}
+
+
+
+/* タイトル出現アニメーションの定義 */
+
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translate(-50%, -60%); }
+    100% { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+
+
+.main-title {
+    font-family: 'Syne', serif;
+    letter-spacing: -1px;
+    font-weight: 800;
+    color : #333333;
+
+    margin-top: 0;       /* 上の余白を消す */
+    line-height: 1;      /* 行の高さを文字の大きさギリギリまで詰める */
+    font-size: clamp(2rem, 6vw, 4rem);
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+
+
+
+.bg-image {
+  position: absolute; /* 絶対配置で浮かせる */
+  top: 25%;
+  left: 15%;
+  width: 70%;
+  height: 50%;
+  z-index: 0; /* 一番後ろへ */
+  opacity: 0.8; /* お好みで：少し暗くして文字を読みやすくする */
+
+  object-fit: cover;      /* 枠に合わせて隙間なく埋める（トリミング） */
+  object-position: center; /* 画像の【中心】を基準に表示する */
+}
+
+
+
+
+
+a:hover { opacity: 0.7; color: #00c853; }
+
+
+
+
+
+.rounded-box {
+  background-color: var(--color-paper);
+  color: #fff;
+  
+  /* 枠線：白の手書き風 */
+  border: 2px solid var(--color-line);
+  border-radius: 4px; /* 少しだけ丸める */
+
+  /* ★中間ポイント：影を「ポップな黄色」にしてズラす！ */
+  /* これで「暗いけど楽しい」雰囲気が出ます */
+  box-shadow: 8px 8px 0px 0px var(--color-accent);
+  
+  /* ギザギザ（破れ目）はそのまま維持（色は --color-paper に合わせる） */
+}
+
+
+
+
+
+
+
