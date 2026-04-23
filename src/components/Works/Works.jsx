@@ -18,10 +18,10 @@
       link: "https://mesi-ko.vercel.app/"
     },
     {
-      title: "Coming Soon...",
-      desc: "Preparation",
-      image: "",
-      link: "#"
+      title: "nuidress（仮名）",
+      desc: "react/vercel/JSX",
+      image: "image-home/nuidress.png",
+      link: "https://nuidress.vercel.app/"
     }
   ];
 
