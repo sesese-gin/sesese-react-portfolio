@@ -10,8 +10,12 @@ function Contact({ baseUrl}){
                 <p className="contact-label">GET IN TOUCH</p>
                 
                 {/* 2. 主役のメールアドレス（クリックでメーラー起動） */}
-                <a href="mailto:ginchan0603ks@gmail.com" className="email-big">
-                    ginchan0603ks<br className="sp-only" />@gmail.com
+                <a  className="email-big" 
+                    href="https://forms.gle/mxyVBhHJ4LBQP4KQA" 
+                    target="_blank" 
+                    rel="noopener noreferrer">
+
+                    googleform
                 </a>
 
                 {/* 3. SNSリンク（ここを書き換えてください） */}
